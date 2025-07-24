@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.quotesapp.model.quote
@@ -25,4 +26,18 @@ fun QuoteListScreen (data: Array<quote>, onClick: (quote:quote)-> Unit) {
         )
         QuoteList(data = data , onClick)
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewQuoteListScreen() {
+    val sampleQuotes = arrayOf(
+        quote("Be yourself; everyone else is already taken.", "Oscar Wilde"),
+        quote("The only way to do great work is to love what you do.", "Steve Jobs"),
+    )
+
+    QuoteListScreen(
+        data = sampleQuotes,
+        onClick = { /* Do nothing or show a log */ }
+    )
 }
